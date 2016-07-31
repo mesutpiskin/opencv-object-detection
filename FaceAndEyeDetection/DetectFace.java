@@ -48,6 +48,9 @@ public class DetectFace {
 				"D:/Programlar/Opencv/3.1.0/opencv/build/etc/haarcascades/haarcascade_frontalface_default.xml");
 		CascadeClassifier cascadeEyeClassifier = new CascadeClassifier(
 				"D:/Programlar/Opencv/3.1.0/opencv/build/etc/haarcascades/haarcascade_eye.xml");
+		
+		CascadeClassifier cascadeNoseClassifier = new CascadeClassifier(
+				"D:/Programlar/Opencv/3.1.0/opencv/build/etc/haarcascades/haarcascade_mcs_nose.xml");
 	    //CascadeClassifier cascadeMouthClassifier = new CascadeClassifier("OpenCV/haarcascades/haarcascade_mcs_mouth.xml"); haarcascade_mcs_mouth on 2.4.11
 		//Varsayýlan kamera aygýtýný baþlat
 		VideoCapture videoDevice = new VideoCapture();
@@ -57,15 +60,14 @@ public class DetectFace {
 			while (true) {		
 				Mat frameCapture = new Mat();
 				videoDevice.read(frameCapture);
+				
 				//Yakalanan görüntüyü önce dönüþtür ve frame içerisine yükle
 				MatOfRect faces = new MatOfRect();
-				cascadeFaceClassifier.detectMultiScale(frameCapture, faces);
-				
-				
+				cascadeFaceClassifier.detectMultiScale(frameCapture, faces);								
 				//Yakalanan çerçeve varsa içerisinde dön ve yüzün boyutlarý ölçüsünde bir kare çiz
 				for (Rect rect : faces.toArray()) {
 					//Sol üst köþesine metin yaz
-					Imgproc.putText(frameCapture, "Yuz", new Point(rect.x,rect.y-5), 1, 2, new Scalar(0,0,255));								
+					Imgproc.putText(frameCapture, "Face", new Point(rect.x,rect.y-5), 1, 2, new Scalar(0,0,255));								
 					Imgproc.rectangle(frameCapture, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height),
 							new Scalar(0, 100, 0),3);
 				}
@@ -75,13 +77,24 @@ public class DetectFace {
 				cascadeEyeClassifier.detectMultiScale(frameCapture, eyes);
 				for (Rect rect : eyes.toArray()) {
 					//Sol üst köþesine metin yaz
-					Imgproc.putText(frameCapture, "Goz", new Point(rect.x,rect.y-5), 1, 2, new Scalar(0,0,255));				
+					Imgproc.putText(frameCapture, "Eye", new Point(rect.x,rect.y-5), 1, 2, new Scalar(0,0,255));				
 					//Kare çiz
 					Imgproc.rectangle(frameCapture, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height),
 							new Scalar(200, 200, 100),2);
 				}
 				
-				//Gözleri bul ve bulunan array içerisinde dönerek kare çiz
+				//Burunlarý bul ve bulunan array içerisinde dönerek kare çiz
+				MatOfRect nose = new MatOfRect();
+				cascadeNoseClassifier.detectMultiScale(frameCapture, nose);
+				for (Rect rect : nose.toArray()) {
+					//Sol üst köþesine metin yaz
+					Imgproc.putText(frameCapture, "Nose", new Point(rect.x,rect.y-5), 1, 2, new Scalar(0,0,255));				
+					//Kare çiz
+					Imgproc.rectangle(frameCapture, new Point(rect.x, rect.y), new Point(rect.x + rect.width, rect.y + rect.height),
+							new Scalar(50, 255, 50),2);
+				}
+				
+				//Aðýz bul ve bulunan array içerisinde dönerek kare çiz
 			   /*MatOfRect mouth = new MatOfRect();
 				cascadeMouthClassifier.detectMultiScale(frameCapture, mouth);
 				for (Rect rect : mouth.toArray()) {
@@ -94,7 +107,7 @@ public class DetectFace {
 				
 				//Resmi swing nesnesinde gösterebilmek için önce image haline çevir ve ekrana bas
 				PushImage(ConvertMat2Image(frameCapture));
-				System.out.println(String.format("%s yüz(FACES) %s göz(EYES) detected.", faces.toArray().length,eyes.toArray().length));
+				System.out.println(String.format("%s yüz(FACES) %s göz(EYE) %s burun(NOSE) detected.", faces.toArray().length,eyes.toArray().length,nose.toArray().length));
 			}
 		} else {
 			System.out.println("Video aygýtýna baðlanýlamadý.");
