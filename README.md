@@ -26,4 +26,4 @@ An example of an application where OpenCV is used to detect objects based on col
 OpenCV 3.x version https://github.com/opencv/opencv
 
 Template Matching http://mesutpiskin.com/blog/opencv-template-matching-ile-nesne-tespiti.html
-![Object Detecting with Template Matching](http://i2.wp.com/mesutpiskin.com/blog/wp-content/uploads/2016/09/template-matching-sonuc.jpg)
+![Object Detecting with Template Matching](http://i.stack.imgur.com/JIoQ8.jpg)
