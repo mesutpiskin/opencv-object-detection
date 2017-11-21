@@ -1,5 +1,6 @@
-# Object Detection with OpenCV 
+# EN:Object Detection with OpenCV  TR:OpenCV ile Nesne Tespiti
 
+![Yotube üzerinden ilgili video eğitimlere ulaşabilirsiniz.](https://www.youtube.com/watch?v=MhZtXgXtzNs&index=14&list=PLt-aCjPZOlWnAaWRVdH7X-L5eRfqHanW3)
 ### Examples
 There are three examples in the repository.
 
