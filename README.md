@@ -1,3 +1,7 @@
+
+![OpenCV](https://img.shields.io/badge/Library-OpenCV-Green.svg)
+![jAVA](https://img.shields.io/badge/Language-Java-red.svg)
+
 # EN:Object Detection with OpenCV  TR:OpenCV ile Nesne Tespiti
 
 [Youtube üzerinden ilgili video eğitimlere ulaşabilirsiniz.](https://www.youtube.com/watch?v=MhZtXgXtzNs&index=14&list=PLt-aCjPZOlWnAaWRVdH7X-L5eRfqHanW3)
