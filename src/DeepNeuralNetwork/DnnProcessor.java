@@ -31,7 +31,7 @@ public class DeepNeuralNetworkProcessor {
             "sheep", "sofa", "train", "tvmonitor"};
 
 
-    public DeepNeuralNetworkProcessor(AdvancedSettingsService advancedSettingsService) {
+    public DeepNeuralNetworkProcessor() {
       this.net = Dnn.readNetFromCaffe(proto, model);
     }
 
@@ -74,21 +74,18 @@ public class DeepNeuralNetworkProcessor {
             }
         } catch (Exception ex) {
             LOGGER.error("An error occurred DNN: ", ex);
-        } finally {
-            MatHelper.releaseMat(blob);
-            MatHelper.releaseMat(detections);
         }
         return personObjectCount;
     }
 
     public List<DnnObject> getObjectsInFrame(Mat frame, boolean isGrayFrame) {
 
-        int inWidth = advancedSettingsService.getAdvancedSettings().retrieveIntValueOrDefault("image.width", 320);
-        int inHeight = advancedSettingsService.getAdvancedSettings().retrieveIntValueOrDefault("image.height", 240);
-        double inScaleFactor = advancedSettingsService.getAdvancedSettings().retrieveDoubleValueOrDefault("dnn.inscalefactor", 0.007843);
-        double thresholdDnn = advancedSettingsService.getAdvancedSettings().retrieveDoubleValueOrDefault("dnn.threshold", 0.2);
-        double meanVal = advancedSettingsService.getAdvancedSettings().retrieveDoubleValueOrDefault("dnn.meanvalue", 127.5);
-
+        int inWidth = 320;
+        int inHeight = 240;
+        double inScaleFactor = 0.007843;
+        double thresholdDnn =  0.2;
+        double meanVal = 127.5;
+        
         Mat blob = null;
         Mat detections = null;
         List<DnnObject> objectList = new ArrayList<>();
@@ -138,9 +135,6 @@ public class DeepNeuralNetworkProcessor {
 
         } catch (Exception ex) {
             LOGGER.error("An error occurred DNN: ", ex);
-        } finally {
-            MatHelper.releaseMat(blob);
-            MatHelper.releaseMat(detections);
         }
         return objectList;
     }
