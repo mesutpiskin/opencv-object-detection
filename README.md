@@ -2,15 +2,19 @@
 ![OpenCV](https://img.shields.io/badge/Library-OpenCV-Green.svg)
 ![jAVA](https://img.shields.io/badge/Language-Java-red.svg)
 
-# EN:Object Detection with OpenCV  TR:OpenCV ile Nesne Tespiti
+# Object Detection with OpenCV
 
-[Youtube üzerinden ilgili video eğitimlere ulaşabilirsiniz.](https://www.youtube.com/watch?v=MhZtXgXtzNs&index=14&list=PLt-aCjPZOlWnAaWRVdH7X-L5eRfqHanW3)
+[Youtube videos (Turkish)](https://www.youtube.com/watch?v=MhZtXgXtzNs&index=14&list=PLt-aCjPZOlWnAaWRVdH7X-L5eRfqHanW3)
+
+[Blog post (Turkish)](http://mesutpiskin.com/blog/opencv-egitim-serisi)
+
 ### Examples
 There are three examples in the repository.
 
 * [Haar Cascade] -  Object detection face and eye etc.
 * [Color Detection] - Object detection and tracking using object color.
 * [Template Matching] - Object detection with template matching.
+* [Deep Learning] - Object detection with deep neural network (dnn).
 
 ### Haar Cascade
 
@@ -42,7 +46,7 @@ An example of an application where OpenCV is used to detect objects based on col
 * Java >6 Version
 
 
-#### Examples 3: Object Detection with Template Matching
+#### Example 3: Object Detection with Template Matching
 Template matching is a technique for finding areas of an image that match (are similar) to a template image (patch).
 
 **Requirements**
@@ -57,3 +61,14 @@ My blog post for [template matching.](http://mesutpiskin.com/blog/opencv-templat
    [Haar Cascade]: <#>
    [Color Detection]:  <#>
    [Template Matching]: <#>
+   [Deep Learning]: <#>
+   
+#### Example 4: Object Detection with DNN
+
+* OpenCV  > 3.3 Version
+
+In this tutorial you will learn how to use opencv dnn module for image classification by using MobileNetSSD_deploy trained network.
+
+My blog post for [DNN.](http://mesutpiskin.com/blog/opencv-derin-ogrenme-nesne-tanima.html)
+
+![Object Detecting with DNN](https://i0.wp.com/mesutpiskin.com/blog/wp-content/uploads/2018/08/siniflandirma_opencv_dnn.png?zoom=2&resize=484%2C258)
