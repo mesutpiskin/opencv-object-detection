@@ -20,8 +20,8 @@ import java.util.List;
 public class DeepNeuralNetworkProcessor {
     private final static Logger LOGGER = LoggerFactory.getLogger(DeepNeuralNetworkProcessor.class);
     private Net net;
-    private final String proto = "model/MobileNetSSD_deploy.prototxt";
-    private final String model = "model/MobileNetSSD_deploy.caffemodel";
+    private final String proto = "data/dnnmodel/MobileNetSSD_deploy.prototxt";
+    private final String model = "data/dnnmodel/MobileNetSSD_deploy.caffemodel";
 
     private final String[] classNames = {"background",
             "aeroplane", "bicycle", "bird", "boat",
