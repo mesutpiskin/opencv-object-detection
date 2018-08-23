@@ -4,7 +4,10 @@
 
 # Object Detection with OpenCV
 
-[Youtube üzerinden ilgili video eğitimlere ulaşabilirsiniz.](https://www.youtube.com/watch?v=MhZtXgXtzNs&index=14&list=PLt-aCjPZOlWnAaWRVdH7X-L5eRfqHanW3)
+[Youtube videos (Turkish)](https://www.youtube.com/watch?v=MhZtXgXtzNs&index=14&list=PLt-aCjPZOlWnAaWRVdH7X-L5eRfqHanW3)
+
+[Blog post (Turkish)](http://mesutpiskin.com/blog/opencv-egitim-serisi)
+
 ### Examples
 There are three examples in the repository.
 
